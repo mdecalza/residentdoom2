@@ -1,0 +1,72 @@
+DOOMED RESIDENT 2
+RESOURCE CREDITS
+
+
+-= Music =-
+
+TITLE SCREEN "Outer Plane" by Snaxalotl
+LEVEL MUSIC  "Thresholds Beyond" by Snaxalotl
+(from AB.wad)
+
+TEXT SCREEN  "The End of DOOM" by Bobby Prince
+(from DOOM.wad)
+
+-= Sound FX =-
+
+DSWPNUP         Moustachio
+
+
+-= Palette =-
+
+PLAYPAL         DiR
+COLORMAP        DiR
+(from OPal.wad)
+
+
+-= Graphics =-
+
+ENDOOM          Peccatum Mihzamiz
+TITLEPIC        Moustachio
+CREDIT          Moustachio
+
+
+-= Weapons =-
+
+FIST
+DECOHack: Moustachio
+Sprites: id Software
+Sounds: id Software
+
+AXE
+DECOHack: Moustachio
+Sprites: Neoworm
+Sounds: Rogue, 3D Realms, lesaucisson, id Software
+
+PISTOL
+DECOHack: Moustachio
+Sprites: JoeyTD, id Software, 3D Realms
+Sounds: id Software, Moustachio
+
+SHOTGUN
+DECOHack: Moustachio
+Sprites: 3D Realms, Eurocom, Xim, Dzierzan, Fox, Gothic
+Sounds: Dudukrazy, Moustachio
+
+HAND GRENADES
+DECOHack: Moustachio
+Sprites: Lobotomy Software, NeoWorm, Moustachio
+Sounds: Lobotomy Software, id Software
+
+
+-= Miscellaneous =-
+
+DECOHack        Moustachio
+MAP01           Moustachio
+
+Text            eevee
+(using Doom Text Generator)
+c.eev.ee/doom-text-generator/
+
+
+-= Beta Playtesting =-
+

@@ -1,0 +1,74 @@
+===========================================================================
+Advanced engine needed  : MBF21-compatible
+Primary purpose         : Single play
+===========================================================================
+Title                   : Doomed Resident 2
+Filename                : doomresiden2.wad
+Release date            : Oct. 31, 2025
+Author                  : Moustachio
+Other Files By Author   : doomresident.wad, atone.wad, crud.wad
+Misc. Author Info       : Project lead of the Interception series.
+
+Description             : Happy Halloween!
+
+Additional Credits to   : Snaxalotl & Bobby Prince for music, Realm667 for
+                          resources, DiR for OPal, MTrop for DECOHack
+                          & DoomTools, id Software for DOOM II.
+						  Nic and Adam for playtesting.
+                          Check the CREDITS lump for more info!
+===========================================================================
+
+
+* What is included *
+
+New levels              : 1
+Sounds                  : Yes
+Music                   : Yes
+Graphics                : Yes
+Dehacked/BEX Patch      : Yes
+Demos                   : Yes
+Other                   : UMAPINFO, COMPLVL, GAMECONF
+Other files required    : None
+
+
+* Play Information *
+
+Game                    : Doom 2
+Map #                   : MAP01
+Single Player           : Designed for
+Cooperative 2-4 Player  : Player Starts Only
+Deathmatch 2-4 Player   : No
+Other game styles       : Not sure
+Difficulty Settings     : Yes
+
+
+* Construction *
+
+Base                    : New from scratch
+Build Time              : 7 days
+Editor(s) used          : DoomMake, DECOHack, SLADE, Ultimate Doom Builder
+Known Bugs              : None (that I know of)
+May Not Run With        : Any non-MBF21-compatible source port
+Tested With             : DSDA-Doom 0.29.0, KEX Engine
+
+
+* Copyright / Permissions *
+
+This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
+International License. To view a copy of this license, visit
+https://creativecommons.org/licenses/by-sa/4.0/
+
+You are free to copy and redistribute the material in any medium or format;
+and remix, transform, and build upon the material for any purpose, even
+commercially. If you do so, you must give appropriate credit, provide a link
+to the license, and indicate if changes were made. You may do so in any
+reasonable manner, but not in any way that suggests the licensor endorses you
+or your use. If you remix, transform, or build upon the material, you MUST
+distribute your contributions under the same license as the original.
+
+
+* Where to get the file that this text file describes *
+
+The Usual: ftp://archives.gamers.org/pub/idgames/ and mirrors
+Web sites: 
+FTP sites: 
