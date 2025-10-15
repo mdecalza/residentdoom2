@@ -231,6 +231,30 @@ thing 152 : thing 34 "Magic grenade spawner"
 	}
 }
 
+thing 153 "Something that should not be"
+{
+  ednum 6001
+
+  Health 4000
+  Speed 3
+  Radius 20
+  Height 72
+  Reactiontime 8
+  Painchance 170
+  Mass 1000
+
+  // Flags
+  +SOLID
+  +SHOOTABLE
+
+  States
+  {
+    Spawn:
+      SP01 A -1
+      Stop
+  }
+}
+
 // Spawns a Magic grenade spawner which spawns a real grenade.
 // Gets around the DECOHack limitation specified above Magic grenade spawner.
 weapon 4 "Hand grenade"
