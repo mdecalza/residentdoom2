@@ -44,7 +44,7 @@ each thing from 129 to 134
 }
 
 // Make all melee weapons silent
-each weapon in (0,4,7)
+each weapon in (0, 4, 7)
 {
 	+SILENT
 }
@@ -233,10 +233,11 @@ thing 152 : thing 34 "Magic grenade spawner"
 
 thing 153 "Something that should not be"
 {
-  ednum 6001
+  //$category Monsters
+  Ednum 6001
 
   Health 4000
-  Speed 3
+  Speed 6
   Radius 20
   Height 72
   Reactiontime 8
@@ -246,12 +247,46 @@ thing 153 "Something that should not be"
   // Flags
   +SOLID
   +SHOOTABLE
+  +COUNTKILL
+  +LOGRAV
+  +NORADIUSDMG
 
   States
   {
-    Spawn:
-      SP01 A -1
-      Stop
+	Spawn:
+	  SP01 E 5 A_Look
+	  SP01 E 5 A_Turn(18)
+	  Loop
+    See:
+	  SP01 E 20 {
+		A_PlaySound(FRE003)
+		A_RadiusDamage(4096, 128)
+		A_Chase
+		A_JumpIfTargetCloser(JumpAtPlayer, 4096.0)
+	  }
+      Loop
+	JumpAtPlayer:
+	  SP01 E 40 {
+		A_PlaySound(FRE003)
+		A_SkullAttack
+		A_RadiusDamage(4096, 128)
+	  }
+	  SP01 EEE 10 {
+		A_PlaySound(FRE003)
+		A_FaceTarget
+	  }
+	  SP01 E 10 {
+		A_PlaySound(FRE003)
+		A_FaceTarget
+		A_RandomJump(Disappear, 128)
+	  }
+	  Goto See
+	Disappear:
+	  SP01 EEEEEEEEEE 10 {
+		A_PlaySound(FRE003)
+		A_FaceTarget
+	  }
+	  Goto Spawn
   }
 }
 
