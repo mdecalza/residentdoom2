@@ -243,6 +243,7 @@ thing 153 "Something that should not be"
   Reactiontime 8
   Painchance 170
   Mass 1000
+  Damage 4096
 
   // Flags
   +SOLID
@@ -250,6 +251,7 @@ thing 153 "Something that should not be"
   +COUNTKILL
   +LOGRAV
   +NORADIUSDMG
+  +TRANSLUCENT
 
   States
   {
@@ -259,34 +261,38 @@ thing 153 "Something that should not be"
 	  Loop
     See:
 	  SP01 E 20 {
-		A_PlaySound(FRE003)
-		A_RadiusDamage(4096, 128)
+		A_PlaySound(FRE003, 1)
 		A_Chase
 		A_JumpIfTargetCloser(JumpAtPlayer, 4096.0)
 	  }
       Loop
 	JumpAtPlayer:
-	  SP01 E 40 {
-		A_PlaySound(FRE003)
-		A_SkullAttack
-		A_RadiusDamage(4096, 128)
-	  }
-	  SP01 EEE 10 {
-		A_PlaySound(FRE003)
+	  SP01 F 10 {
 		A_FaceTarget
+		A_PlaySound(FRE003, 1)
 	  }
-	  SP01 E 10 {
-		A_PlaySound(FRE003)
+	  SP01 GH 10 A_FaceTarget
+	  SP01 H 10 A_SkullAttack
+	  SP01 HHH 10 A_FaceTarget
+	  SP01 H 10 {
 		A_FaceTarget
 		A_RandomJump(Disappear, 128)
 	  }
 	  Goto See
 	Disappear:
 	  SP01 EEEEEEEEEE 10 {
-		A_PlaySound(FRE003)
 		A_FaceTarget
 	  }
 	  Goto Spawn
+	Death:
+	  SP01 J 10 A_XScream
+	  SP01 K 7 A_Fall
+	  SP01 LMNO 5
+	  SP01 P 350
+	  SP01 ONML 5
+	  SP01 K 7
+	  SP01 J 10 A_SpawnObject(153)
+	  Stop
   }
 }
 
