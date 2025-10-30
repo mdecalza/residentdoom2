@@ -233,67 +233,77 @@ thing 152 : thing 34 "Magic grenade spawner"
 
 thing 153 "Something that should not be"
 {
-  //$category Monsters
-  Ednum 6001
+	//$category Monsters
+	Ednum 6001
 
-  Health 4000
-  Speed 6
-  Radius 20
-  Height 72
-  Reactiontime 8
-  Painchance 170
-  Mass 1000
-  Damage 4096
+	Health 1500
+	Speed 48
+	Radius 20
+	Height 72
+	Reactiontime 8
+	Painchance 170
+	Mass 1000
+	Damage 4096
 
-  // Flags
-  +SOLID
-  +SHOOTABLE
-  +COUNTKILL
-  +LOGRAV
-  +NORADIUSDMG
-  +TRANSLUCENT
+	// Flags
+	+SOLID
+	+SHOOTABLE
+	+COUNTKILL
+	+LOGRAV
+	+NORADIUSDMG
 
-  States
-  {
-	Spawn:
-	  SP01 E 5 A_Look
-	  SP01 E 5 A_Turn(18)
-	  Loop
-    See:
-	  SP01 E 20 {
-		A_PlaySound(FRE003, 1)
-		A_Chase
-		A_JumpIfTargetCloser(JumpAtPlayer, 4096.0)
-	  }
-      Loop
-	JumpAtPlayer:
-	  SP01 F 10 {
-		A_FaceTarget
-		A_PlaySound(FRE003, 1)
-	  }
-	  SP01 GH 10 A_FaceTarget
-	  SP01 H 10 A_SkullAttack
-	  SP01 HHH 10 A_FaceTarget
-	  SP01 H 10 {
-		A_FaceTarget
-		A_RandomJump(Disappear, 128)
-	  }
-	  Goto See
-	Disappear:
-	  SP01 EEEEEEEEEE 10 {
-		A_FaceTarget
-	  }
-	  Goto Spawn
-	Death:
-	  SP01 J 10 A_XScream
-	  SP01 K 7 A_Fall
-	  SP01 LMNO 5
-	  SP01 P 350
-	  SP01 ONML 5
-	  SP01 K 7
-	  SP01 J 10 A_SpawnObject(153)
-	  Stop
-  }
+	States
+	{
+		Spawn:
+			SP01 E 5 A_Look
+			SP01 E 5 A_Turn(18)
+			Loop
+		See:
+			SP01 E 1 A_PlaySound(FRE003, 1)
+			Goto Chase
+		Chase:
+			SP01 E 20 {
+				A_Chase
+				A_JumpIfTargetCloser(AttackSound1, 2048.0)
+			}
+			Loop
+		AttackSound1:
+			SP01 F 0 A_RandomJump(AttackSound2, 96)
+			SP01 F 10 {
+				A_FaceTarget
+				A_PlaySound(FRE004)
+			}
+			Goto JumpAtPlayer
+		AttackSound2:
+			SP01 F 10 {
+				A_FaceTarget
+				A_PlaySound(FRE003)
+			}
+			Goto JumpAtPlayer
+		JumpAtPlayer:
+			SP01 GH 10 A_FaceTarget
+			SP01 H 10 A_SkullAttack
+			SP01 HHH 10 A_FaceTarget
+			SP01 H 10 {
+				A_FaceTarget
+				A_RandomJump(Pain, 32)
+			}
+			Goto Spawn
+		Pain:
+			SP01 EEEEEEEEEE 10 A_FaceTarget
+			Goto Chase
+		Death:
+			SP01 J 10 A_PlaySound("SLOP")
+			SP01 K 7 A_Fall
+			SP01 LMNO 5
+			SP01 P 350
+			SP01 O 5 A_PlaySound("SLOP")
+			SP01 NML 5
+			SP01 K 7
+			SP01 J 10
+			SP01 J 0 A_SpawnObject(153)
+			Stop
+	}
 }
 
 // Spawns a Magic grenade spawner which spawns a real grenade.
