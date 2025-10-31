@@ -52,10 +52,23 @@ DECOHack: Moustachio
 Sprites: 3D Realms, Eurocom, Xim, Dzierzan, Fox, Gothic
 Sounds: Dudukrazy, Moustachio
 
+SMG
+DECOHack: Moustachio
+Sprites: 3D Realms, Id Software, Cory Whittle
+Sounds: ScubaSteve
+
 HAND GRENADES
 DECOHack: Moustachio
 Sprites: Lobotomy Software, NeoWorm, Moustachio
 Sounds: Lobotomy Software, id Software
+
+
+-= Enemies =-
+
+SOMETHING THAT SHOULD NOT BE
+DECOHack: Moustachio
+Sprites: Freedoom
+Sounds: Hollywood Edge Historical Series SFX Library
 
 
 -= Miscellaneous =-
