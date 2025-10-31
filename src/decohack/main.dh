@@ -198,14 +198,14 @@ weapon 3 "SMG"
 	States
 	{
 		Fire:
-			CHGG BC 3 Bright {
+			CHGG BCD 2 Bright {
 				A_ConsumeAmmo
 				A_Light2
 				A_WeaponSound("FRE005")
-				A_WeaponBulletAttack(6.0, 4.0, 3, 8, 3)
+				A_WeaponBulletAttack(6.0, 4.0, 2, 8, 3)
 			}
-			CHGG A 3 A_ReFire
-			CHGG A 0 A_Light0
+			CHGG E 0 A_Light0
+			CHGG E 4 A_ReFire
 		Goto Ready
 	}
 }
@@ -542,7 +542,7 @@ thing 153 "Something that should not be"
 			SP01 J 10 A_XScream
 			SP01 K 7 A_Fall
 			SP01 LMNO 5
-			SP01 P 350
+			SP01 P 700
 			SP01 O 5 A_PlaySound("SLOP")
 			SP01 NML 5
 			SP01 K 7
