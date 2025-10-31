@@ -9,7 +9,7 @@
 
 misc
 {
-	initialBullets 5
+	initialBullets 10
 	initialHealth 50
 }
 
@@ -477,6 +477,7 @@ thing 153 "Something that should not be"
 			}
 			Goto JumpAtPlayer
 		JumpAtPlayer:
+			SP01 G 0 A_RandomJump(Spawn, 32)
 			SP01 GH 10 A_FaceTarget
 			SP01 H 10 A_SkullAttack
 			SP01 HHH 10 A_FaceTarget
@@ -487,9 +488,9 @@ thing 153 "Something that should not be"
 			Goto See
 		Pain:
 			SP01 EEEEEEEEEE 10 A_FaceTarget
-			Goto Spawn
+			Goto See
 		Death:
-			SP01 J 10 A_PlaySound("SLOP")
+			SP01 J 10 A_XScream
 			SP01 K 7 A_Fall
 			SP01 LMNO 5
 			SP01 P 350
