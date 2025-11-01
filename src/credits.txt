@@ -25,7 +25,6 @@ COLORMAP        DiR
 
 -= Graphics =-
 
-ENDOOM          Peccatum Mihzamiz
 TITLEPIC        Moustachio
 CREDIT          Moustachio
 
@@ -71,15 +70,19 @@ Sprites: Freedoom
 Sounds: Hollywood Edge Historical Series SFX Library
 
 
+-= Decoration =-
+
+HELICOPTER
+DECOHack: Moustachio
+Sprites: Moustachio, Somchai Kongkamsri (https://www.pexels.com/photo/black-helicopter-194365/)
+
+
 -= Miscellaneous =-
 
 DECOHack        Moustachio
 MAP01           Moustachio
+Story text      Moustachio
 
-Text            eevee
+Doom Text       eevee
 (using Doom Text Generator)
 c.eev.ee/doom-text-generator/
-
-
--= Beta Playtesting =-
-

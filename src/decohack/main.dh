@@ -107,21 +107,21 @@ strings
 	GOTSHOTGUN "A shotgun!"
 	GOTSHOTGUN2 "Nice! A double-barreled shotgun!"
 
-	PD_BLUEO "I need a blue key to activate this..."
-	PD_REDO "I need a red key to activate this..."
-	PD_YELLOWO "I need a yellow key to activate this..."
-	PD_BLUEK "I need a blue key to open this door..."
-	PD_REDK "I need a red key to open this door..."
-	PD_YELLOWK "I need a yellow key to open this door..."
-	PD_BLUEC "I need a blue keycard to open this door..."
-	PD_REDC "I need a red keycard to open this door..."
-	PD_YELLOWC "I need a yellow keycard to open this door..."
-	PD_BLUES "I need a blue skull to open this door..."
-	PD_REDS "I need a red skull to open this door..."
-	PD_YELLOWS "I need a yellow skull to open this door..."
-	PD_ANY "I suppose any key could open this door..."
-	PD_ALL3 "This door needs three keys to open..."
-	PD_ALL6 "Looks like I need six keys to open this door..."
+	PD_BLUEO "I need a blue key to make this work..."
+	PD_REDO "I need a red key to make this work..."
+	PD_YELLOWO "I need a yellow key to make this work..."
+	PD_BLUEK "I need a blue key for this..."
+	PD_REDK "I need a red key for this..."
+	PD_YELLOWK "I need a yellow key for this..."
+	PD_BLUEC "I need a blue keycard for this..."
+	PD_REDC "I need a red keycard for this..."
+	PD_YELLOWC "I need a yellow keycard for this..."
+	PD_BLUES "I need a blue skull for this..."
+	PD_REDS "I need a red skull for this..."
+	PD_YELLOWS "I need a yellow skull for this..."
+	PD_ANY "I suppose any key could work..."
+	PD_ALL3 "This needs three keys to open..."
+	PD_ALL6 "Looks like I need six keys for this..."
 
 	STSTR_CHOPPERS "And my axe!"
 }
@@ -314,9 +314,9 @@ thing 2 "Former Human"
 			POSS J 5 A_Fall
 			POSS K 5
 			POSS L 150
-			POSS K 5 A_PlaySound("SLOP")
+			POSS K 5 A_XScream
 			POSS JIH 5
-			POSS H 0 A_SpawnObject(2,0.0,0.0,0.0,0.0,0.0,0.0,0.0)
+			POSS H 0 A_SpawnObject(2)
 			Stop
 		Raise:
 			SPOS TSRQPONM 5
@@ -339,9 +339,9 @@ thing 3 "Former Sergeant"
 			SPOS J 5 A_Fall
 			SPOS K 5
 			SPOS L 175
-			SPOS K 5 A_PlaySound("SLOP")
+			SPOS K 5 A_XScream
 			SPOS JIH 5
-			SPOS H 0 A_SpawnObject(3,0.0,0.0,0.0,0.0,0.0,0.0,0.0)
+			SPOS H 0 A_SpawnObject(3)
 			Stop
 		Raise:
 			SPOS TSRQPONM 5
@@ -360,9 +360,9 @@ thing 6
 			SKEL O 7 A_Fall
 			SKEL P 7
 			SKEL Q 875
-			SKEL Q 5 A_PlaySound("SLOP")
+			SKEL Q 5 A_XScream
 			SKEL PONML 5
-			SKEL L 0 A_SpawnObject(6,0.0,0.0,0.0,0.0,0.0,0.0,0.0)
+			SKEL L 0 A_SpawnObject(6)
 			Stop
 	}
 }
@@ -382,9 +382,9 @@ thing 11 "Chaingunner"
 			CPOS J 5 A_Fall
 			CPOS KLM 5
 			CPOS N 250
-			CPOS N 5 A_PlaySound("SLOP")
+			CPOS N 5 A_XScream
 			CPOS MLKJIH 5
-			CPOS H 0 A_SpawnObject(11,0.0,0.0,0.0,0.0,0.0,0.0,0.0)
+			CPOS H 0 A_SpawnObject(11)
 			Stop
 	}
 }
@@ -402,10 +402,10 @@ thing 12
 			TROO K 6
 			TROO L 6 A_Fall
 			TROO M 150
-			TROO M 8 A_PlaySound("SLOP")
+			TROO M 8 A_XScream
 			TROO L 8
 			TROO KJI 6
-			TROO I 0 A_SpawnObject(12,0.0,0.0,0.0,0.0,0.0,0.0,0.0)
+			TROO I 0 A_SpawnObject(12)
 			Stop
 	}
 }
@@ -422,9 +422,9 @@ thing 13
 			SARG L 4 A_Fall
 			SARG M 4
 			SARG N 300
-			SARG N 5 A_PlaySound("SLOP")
+			SARG N 5 A_XScream
 			SARG MLKJI 5
-			SARG I 0 A_SpawnObject(13,0.0,0.0,0.0,0.0,0.0,0.0,0.0)
+			SARG I 0 A_SpawnObject(13)
 			Stop
 	}
 }
@@ -439,6 +439,25 @@ thing 34 "Magic grenade spawner"
 		Spawn:
 			TNT1 A 1
 			TNT1 A 0 A_SpawnObject(151,-90.0,-10.0,0.0,0.0,-0.5,25.0,5.0)
+			Stop
+	}
+}
+
+// Hell knight
+thing 69
+{
+	States
+	{
+		Death:
+			BOS2 I 8
+			BOS2 J 8 A_Scream
+			BOS2 K 8
+			BOS2 L 8 A_Fall
+			BOS2 MN 8
+			BOS2 O 525
+			BOS2 N 8 A_XScream
+			BOS2 MLKJI 8
+			BOS2 I 0 A_SpawnObject(69)
 			Stop
 	}
 }
@@ -474,6 +493,25 @@ thing 151 : thing 34 "Grenade in flight"
 			}
 			MISL C 6 Bright
 			MISL D 4 Bright
+			Stop
+	}
+}
+
+thing 152 "Helicopter"
+{
+	//$category Decoration
+	Ednum 6002
+
+	Radius 56
+	Height 112
+	Mass 1000
+
+	+NOBLOCKMAP
+
+	States
+	{
+		Spawn:
+			SP02 A -1
 			Stop
 	}
 }
@@ -546,7 +584,7 @@ thing 153 "Something that should not be"
 			SP01 K 7 A_Fall
 			SP01 LMNO 5
 			SP01 P 700
-			SP01 O 5 A_PlaySound("SLOP")
+			SP01 O 5 A_XScream
 			SP01 NML 5
 			SP01 K 7
 			SP01 J 10
