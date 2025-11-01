@@ -11,6 +11,22 @@ Misc. Author Info       : Project lead of the Interception series.
 
 Description             : Happy Halloween!
 
+                          It's been two days since
+                          You've escaped that evil
+                          mansion. You're low on food
+                          and supplies (including ammo).
+
+                          Tired of foraging in the woods
+                          you hop on a freight train
+                          and hope it's taking you
+                          towards the city.
+
+                          You're thinking about how
+                          to explain what you saw to the
+                          authorities, when the train
+                          begins to shake. Better hold
+                          on! This thing's gonna crash!
+
 Additional Credits to   : Snaxalotl & Bobby Prince for music, Realm667 for
                           resources, DiR for OPal, MTrop for DECOHack
                           & DoomTools, id Software for DOOM II.
