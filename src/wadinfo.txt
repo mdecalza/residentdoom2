@@ -12,7 +12,7 @@ Misc. Author Info       : Project lead of the Interception series.
 Description             : Happy Halloween!
 
                           It's been two days since
-                          You've escaped that evil
+                          you've escaped that evil
                           mansion. You're low on food
                           and supplies (including ammo).
 
@@ -61,7 +61,7 @@ Difficulty Settings     : Yes
 * Construction *
 
 Base                    : New from scratch
-Build Time              : 7 days
+Build Time              : 2.5 weeks
 Editor(s) used          : DoomMake, DECOHack, SLADE, Ultimate Doom Builder
 Known Bugs              : None (that I know of)
 May Not Run With        : Any non-MBF21-compatible source port
