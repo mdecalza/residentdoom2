@@ -218,6 +218,33 @@ weapon 4 "Hand grenade"
 
 	States
 	{
+		Select:
+			MISG A 1 {
+				A_CheckAmmo(EmptySelect)
+				A_Raise
+			}
+			Loop
+		EmptySelect:
+			PUNG A 1 A_Raise
+			Loop
+		Ready:
+			MISG A 1 {
+				A_CheckAmmo(EmptyReady)
+				A_WeaponReady
+			}
+			Loop
+		EmptyReady:
+			PUNG A 1 A_WeaponReady
+			Loop
+		Deselect:
+			MISG A 1 {
+				A_CheckAmmo(EmptyDeselect)
+				A_Lower
+			}
+			Loop
+		EmptyDeselect:
+			PUNG A 1 A_Lower
+			Loop
 		Fire:
 			MISG BC 2
 			MISG D 6
@@ -233,7 +260,10 @@ weapon 4 "Hand grenade"
 				A_ConsumeAmmo
 				A_WeaponProjectile(34, 0.0, 0.0, 10.0, 5.0)
 			}
-			MISG G 16 A_WeaponSound("SKESWG")
+			MISG G 16 {
+				A_WeaponSound("SKESWG")
+				A_CheckReload
+			}
 			Goto Ready
 	}
 }
