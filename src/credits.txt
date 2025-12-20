@@ -77,6 +77,13 @@ DECOHack: Moustachio
 Sprites: Moustachio, Somchai Kongkamsri (https://www.pexels.com/photo/black-helicopter-194365/)
 
 
+-= PARTICLE EFFECTS =-
+
+RAIN
+ DECOHack: Lina, Moustachio
+ Sprites: Gutawer
+
+
 -= Miscellaneous =-
 
 DECOHack        Moustachio
