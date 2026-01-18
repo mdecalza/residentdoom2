@@ -558,8 +558,8 @@ thing 153 "Something that should not be"
 	Height 72
 	Reactiontime 8
 	Painchance 170
-	Mass 1000
-	Damage 4096
+	Mass 10000
+	Damage 9
 
 	// Flags
 	+SOLID
@@ -568,6 +568,7 @@ thing 153 "Something that should not be"
 	+LOGRAV
 
 	seesound "FRE003"
+	attacksound "FRE004"
 
 	States
 	{
@@ -577,28 +578,28 @@ thing 153 "Something that should not be"
 			Loop
 		See:
 			SP01 E 20 {
-				A_Chase
 				A_JumpIfTargetInSight(CheckRange)
+				A_Chase
 			}
 			Loop
 		CheckRange:
-			SP01 A 1 A_JumpIfTargetCloser(Attack, 2048.0)
+			SP01 A 2 A_JumpIfTargetCloser(Attack, 2048.0)
 			Goto See
 		Attack:
 			SP01 F 10 {
 				A_FaceTarget
 				A_RandomJump(AttackSound1, 96)
-				A_RandomJump(AttackSound2, 96)
+				A_RandomJump(AttackSound2, 80)
 			}
 			Goto JumpAtPlayer
 		AttackSound1:
-			SP01 F 0 A_PlaySound(FRE004)
+			SP01 F 1 A_PlaySound(FRE004)
 			Goto JumpAtPlayer
 		AttackSound2:
-			SP01 F 0 A_PlaySound(FRE003)
+			SP01 F 1 A_PlaySound(FRE003)
 			Goto JumpAtPlayer
 		JumpAtPlayer:
-			SP01 G 0 A_RandomJump(Spawn, 32)
+			SP01 G 1 A_RandomJump(Spawn, 32)
 			SP01 GH 10 A_FaceTarget
 			SP01 H 10 A_SkullAttack
 			SP01 HHH 10 A_FaceTarget
@@ -608,7 +609,7 @@ thing 153 "Something that should not be"
 			}
 			Goto See
 		Pain:
-			SP01 EEEEEEEEEE 10 A_FaceTarget
+			SP01 IIIIIIIIII 10 A_FaceTarget
 			Goto See
 		Death:
 			SP01 J 10 A_XScream
