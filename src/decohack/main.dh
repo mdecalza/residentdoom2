@@ -194,7 +194,6 @@ weapon 2
 weapon 3 "SMG"
 {
 	ammotype 0
-	ammopershot 2
 
 	States
 	{
@@ -309,7 +308,8 @@ weapon 8 "Bearkiller"
 				A_ConsumeAmmo
 				A_GunFlash
 				A_WeaponSound("DSHTGN")
-				A_WeaponBulletAttack(2.0, 1.0, 21, 7, 5)
+				A_WeaponBulletAttack(2.0, 1.0, 7, 20, 5)
+				A_WeaponBulletAttack(2.0, 1.0, 7, 5, 5)
 			}
 			SHT2 C 40 {
 				A_Light0
