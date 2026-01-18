@@ -643,10 +643,10 @@ thing 154 "Rain"
 	States
 	{
 		Spawn:
-			TNT1 A 70 A_Look
+			TNT1 A 560 A_Look
 			Loop
 		See:
-			TNT1 A 70 A_JumpIfTargetCloser(RandomDelay, 4096.0)
+			TNT1 A 560 A_JumpIfTargetCloser(RandomDelay, 4096.0)
 			Loop
 		RandomDelay:
 			TNT1 A 5 A_RandomJump(FallPick, 50)
